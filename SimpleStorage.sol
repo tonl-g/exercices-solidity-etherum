@@ -8,11 +8,18 @@ Une fonction setStoredData(uint256 value) modifiera la valeur de _storedData par
 pragma solidity ^0.8.0;
 
 contract SimpleStorage {
-  function storeData(uint256 _storedData) private pure returns(uint256) {
+
+uint256 private _storedData;
+
+constructor (uint256 storedData_) {
+  _storedData = storedData_;
+}
+
+  function storedData() public view returns (uint256) {
     return _storedData;
   }
 
-  function setStoredData(uint256 _storedData, uint256 value) private pure returns(uint256) {
-    return _storedData = value;
+  function setStoredData(uint256 storedData_) public {
+    _storedData = storedData_;
   }
 }

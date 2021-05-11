@@ -8,9 +8,10 @@ La fonction check sera pure. */
 pragma solidity ^0.8.0;
 
 contract checkOdd {
-  function check(uint256 nb1) public pure returns(uint256) {
+  function check(uint256 nb1) public pure returns(bool) {
     require(nb1 % 2 == 0, "True");
     require(nb1 % 2 != 0, "False");
-    return nb1;
+    if (nb1%2 == 0) return true;
+        else return false; 
   }
 }
